@@ -128,7 +128,10 @@ async function main() {
   while (true) {
 
     const userProblem = readlineSync.question("\nAsk me anything -> ");
-
+    if (userProblem.toLowerCase() === "exit") {
+      console.log("AI: Goodbye!");
+      break;
+    }
     await runAgent(userProblem);
   }
 }
